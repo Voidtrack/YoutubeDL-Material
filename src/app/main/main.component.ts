@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { DatabaseFile, Download, FileType, Playlist } from "api-types";
 import { RecentVideosComponent } from "app/components/recent-videos/recent-videos.component";
 import { ArgModifierDialogComponent } from "app/dialogs/arg-modifier-dialog/arg-modifier-dialog.component";
-import { saveAs } from "file-saver";
+import { saveAs } from "file-saver-es";
 import { Subject, fromEvent } from "rxjs";
 import { debounceTime, filter, map, switchAll, tap } from "rxjs/operators";
 import { PostsService } from "../posts.services";

@@ -12,6 +12,7 @@ import { MatSelectionListChange } from "@angular/material/list";
 import { MatPaginator } from "@angular/material/paginator";
 import { Router } from "@angular/router";
 import { PostsService } from "app/posts.services";
+import { saveAs } from "file-saver-es";
 import { Subject } from "rxjs";
 import { debounceTime, distinctUntilChanged } from "rxjs/operators";
 import {

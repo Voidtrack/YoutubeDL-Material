@@ -1,23 +1,30 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PostsService } from 'app/posts.services';
-import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
-import { Subscription } from 'api-types';
+import { Component, Inject, OnInit } from "@angular/core";
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogRef,
+} from "@angular/material/dialog";
+import { Subscription } from "api-types";
+import { PostsService } from "app/posts.services";
+import { saveAs } from "file-saver-es";
+import { ConfirmDialogComponent } from "../confirm-dialog/confirm-dialog.component";
 
 @Component({
-    selector: 'app-subscription-info-dialog',
-    templateUrl: './subscription-info-dialog.component.html',
-    styleUrls: ['./subscription-info-dialog.component.scss'],
-    standalone: false
+  selector: "app-subscription-info-dialog",
+  templateUrl: "./subscription-info-dialog.component.html",
+  styleUrls: ["./subscription-info-dialog.component.scss"],
+  standalone: false,
 })
 export class SubscriptionInfoDialogComponent implements OnInit {
-
   sub: Subscription = null;
   unsubbedEmitter = null;
 
-  constructor(public dialogRef: MatDialogRef<SubscriptionInfoDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private postsService: PostsService,
-    private dialog: MatDialog) { }
+  constructor(
+    public dialogRef: MatDialogRef<SubscriptionInfoDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private postsService: PostsService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     if (this.data) {
@@ -29,13 +36,13 @@ export class SubscriptionInfoDialogComponent implements OnInit {
   confirmUnsubscribe() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
-        dialogTitle: $localize`Unsubscribe from ${this.sub['name']}:subscription name:`,
-        dialogText: $localize`Would you like to unsubscribe from ${this.sub['name']}:subscription name:?`,
+        dialogTitle: $localize`Unsubscribe from ${this.sub["name"]}:subscription name:`,
+        dialogText: $localize`Would you like to unsubscribe from ${this.sub["name"]}:subscription name:?`,
         submitText: $localize`Unsubscribe`,
-        warnSubmitColor: true
-      }
+        warnSubmitColor: true,
+      },
     });
-    dialogRef.afterClosed().subscribe(confirmed => {
+    dialogRef.afterClosed().subscribe((confirmed) => {
       if (confirmed) {
         this.unsubscribe();
       }
@@ -43,17 +50,16 @@ export class SubscriptionInfoDialogComponent implements OnInit {
   }
 
   unsubscribe() {
-    this.postsService.unsubscribe(this.sub.id, true).subscribe(res => {
+    this.postsService.unsubscribe(this.sub.id, true).subscribe((res) => {
       this.unsubbedEmitter.emit(true);
       this.dialogRef.close();
     });
   }
 
   downloadArchive() {
-    this.postsService.downloadArchive(null, this.sub.id).subscribe(res => {
+    this.postsService.downloadArchive(null, this.sub.id).subscribe((res) => {
       const blob: Blob = res;
-      saveAs(blob, 'archive.txt');
+      saveAs(blob, "archive.txt");
     });
   }
-
 }
