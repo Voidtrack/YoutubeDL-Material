@@ -3,34 +3,30 @@
   "compilerOptions": {
     "downlevelIteration": true,
     "importHelpers": true,
-    "typeRoots": ["node_modules/@types", "node_modules/@angular/", "node_modules/@angular/material"],
     "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
+    "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
-    "experimentalDecorators": true,
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
-      "ES2022",
+      "es2019",
       "dom"
-    ]
+    ],
+    "module": "es2020",
+    "useDefineForClassFields": false
   },
   "exclude": [
     "assets/default.json"
   ],
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
   }
 }
