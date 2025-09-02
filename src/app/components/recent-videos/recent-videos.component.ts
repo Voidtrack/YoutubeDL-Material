@@ -13,7 +13,7 @@ import { MatPaginator } from "@angular/material/paginator";
 import { Router } from "@angular/router";
 import { PostsService } from "app/posts.services";
 import { Subject } from "rxjs";
-import { distinctUntilChanged } from "rxjs/operators";
+import { debounceTime, distinctUntilChanged } from "rxjs/operators";
 import {
   DatabaseFile,
   FileType,
@@ -22,10 +22,10 @@ import {
 } from "../../../api-types";
 
 @Component({
-    selector: "app-recent-videos",
-    templateUrl: "./recent-videos.component.html",
-    styleUrls: ["./recent-videos.component.scss"],
-    standalone: false
+  selector: "app-recent-videos",
+  templateUrl: "./recent-videos.component.html",
+  styleUrls: ["./recent-videos.component.scss"],
+  standalone: false,
 })
 export class RecentVideosComponent implements OnInit {
   @Input() usePaginator = true;
@@ -156,7 +156,7 @@ export class RecentVideosComponent implements OnInit {
     this.selected_data_objs = this.defaultSelected;
 
     this.searchChangedSubject
-      .debounceTime(500)
+      .pipe(debounceTime(500))
       .pipe(distinctUntilChanged())
       .subscribe((model) => {
         if (model.length > 0) {
