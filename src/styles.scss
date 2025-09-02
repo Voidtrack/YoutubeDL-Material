@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use "palette.scss";
 /* You can add global styles to this file, and also import other style files */
 
 @import 'material-icons/iconfont/material-icons.css';
@@ -8,7 +9,6 @@
 //@import './app-theme';
 /* You can add global styles to this file, and also import other style files */
 // @import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
-@import "palette.scss";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
