@@ -18,12 +18,14 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "backend/public"
+              "base": "backend/public",
+              "browser": ""
             },
             "index": "src/index.html",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": [
-              "src/polyfills.ts"
+              "src/polyfills.ts",
+              "@angular/localize/init"
             ],
             "assets": [
               "src/assets",
@@ -75,7 +77,9 @@
               ]
             },
             "es": {
-              "localize": ["es"]
+              "localize": [
+                "es"
+              ]
             }
           },
           "defaultConfiguration": ""
