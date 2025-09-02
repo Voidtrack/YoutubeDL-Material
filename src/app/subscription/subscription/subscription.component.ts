@@ -6,9 +6,10 @@ import { EditSubscriptionDialogComponent } from 'app/dialogs/edit-subscription-d
 import { Subscription } from 'api-types';
 
 @Component({
-  selector: 'app-subscription',
-  templateUrl: './subscription.component.html',
-  styleUrls: ['./subscription.component.scss']
+    selector: 'app-subscription',
+    templateUrl: './subscription.component.html',
+    styleUrls: ['./subscription.component.scss'],
+    standalone: false
 })
 export class SubscriptionComponent implements OnInit, OnDestroy {
 

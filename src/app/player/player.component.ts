@@ -19,9 +19,10 @@ export interface IMedia {
 }
 
 @Component({
-  selector: 'app-player',
-  templateUrl: './player.component.html',
-  styleUrls: ['./player.component.css']
+    selector: 'app-player',
+    templateUrl: './player.component.html',
+    styleUrls: ['./player.component.css'],
+    standalone: false
 })
 export class PlayerComponent implements OnInit, AfterViewInit, OnDestroy {
 

@@ -56,23 +56,14 @@ backend/subscriptions/playlists/*
 backend/subscriptions/archives/*
 backend/*.exe
 src/assets/default.json
-backend/appdata/db.json
-backend/appdata/archives/archive_audio.txt
-backend/appdata/archives/archive_video.txt
-backend/appdata/archives/blacklist_audio.txt
-backend/appdata/archives/blacklist_video.txt
-backend/appdata/logs/combined.log
-backend/appdata/logs/error.log
-backend/appdata/users.json
+backend/appdata/
 backend/users/*
-backend/appdata/cookies.txt
 backend/public
 src/assets/i18n/*.json
 
 # User Files
-db/
-appdata/
-audio/
-video/
-subscriptions/
-users/
+/db/
+/audio/
+/video/
+/subscriptions/
+/users/

@@ -6,9 +6,10 @@ import { CreatePlaylistComponent } from 'app/create-playlist/create-playlist.com
 import { Playlist } from 'api-types';
 
 @Component({
-  selector: 'app-custom-playlists',
-  templateUrl: './custom-playlists.component.html',
-  styleUrls: ['./custom-playlists.component.scss']
+    selector: 'app-custom-playlists',
+    templateUrl: './custom-playlists.component.html',
+    styleUrls: ['./custom-playlists.component.scss'],
+    standalone: false
 })
 export class CustomPlaylistsComponent implements OnInit {
 

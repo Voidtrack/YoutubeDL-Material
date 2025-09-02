@@ -5,9 +5,10 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 import { Subscription } from 'api-types';
 
 @Component({
-  selector: 'app-subscription-info-dialog',
-  templateUrl: './subscription-info-dialog.component.html',
-  styleUrls: ['./subscription-info-dialog.component.scss']
+    selector: 'app-subscription-info-dialog',
+    templateUrl: './subscription-info-dialog.component.html',
+    styleUrls: ['./subscription-info-dialog.component.scss'],
+    standalone: false
 })
 export class SubscriptionInfoDialogComponent implements OnInit {
 

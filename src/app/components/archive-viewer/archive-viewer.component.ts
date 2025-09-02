@@ -10,9 +10,10 @@ import { PostsService } from 'app/posts.services';
 import { NgxFileDropEntry } from 'ngx-file-drop';
 
 @Component({
-  selector: 'app-archive-viewer',
-  templateUrl: './archive-viewer.component.html',
-  styleUrls: ['./archive-viewer.component.scss']
+    selector: 'app-archive-viewer',
+    templateUrl: './archive-viewer.component.html',
+    styleUrls: ['./archive-viewer.component.scss'],
+    standalone: false
 })
 export class ArchiveViewerComponent {
   // table
